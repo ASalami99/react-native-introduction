@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const s = StyleSheet.create({
     container: {
         padding: 20,
-        alignItems: "center",
+        borderRadius: 25,
         backgroundColor: "white",
         shadowColor: "#000",
         shadowOffset: {
@@ -19,7 +19,14 @@ export const s = StyleSheet.create({
         flexDirection: "row"
     },
     social: {
-
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        paddingTop: 10
+    },
+    socialBtn:{
+        borderRadius: "50%",
+        padding: 10,
+        backgroundColor: "#eee",
     },
     avatar: {
         width: 70,

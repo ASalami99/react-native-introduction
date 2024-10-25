@@ -11,7 +11,7 @@ export default function App() {
         firstname={"John"}
         lastname={"Snow"}
         age={30}
-        isOpenToWork={true}
+        isOpenToWork={false}
         car = {{brand: "Mustang", maxspeed: 200}}
         doSomething={function(){
         console.log("Hello!")

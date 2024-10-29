@@ -2,7 +2,7 @@ import { TouchableOpacity, Text, View, Image } from "react-native";
 import { s } from "./ProfileCard.style";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
-export function ProfileCard({ firstname, lastname, age, isOpenToWork, onPressTitle }) {
+export function ProfileCard({ firstname, lastname, age, isOpenToWork, onPressTitle, onPressGithub, onPressSocialMediaIcons}) {
   //If, else statement
   // if (age > 20) {
   //   return <Text>You are old!</Text>;
@@ -66,13 +66,13 @@ export function ProfileCard({ firstname, lastname, age, isOpenToWork, onPressTit
         </View>
       </View>
       <View style={s.social}>
-        <TouchableOpacity style={s.socialBtn}>
+        <TouchableOpacity onPress={()=> onPressSocialMediaIcons("twitterr")} style={s.socialBtn}>
           <FontAwesome name="twitter" size={24} color="black" />
         </TouchableOpacity>
-        <TouchableOpacity style={s.socialBtn}>
+        <TouchableOpacity onPress={onPressGithub} style={s.socialBtn}>
           <FontAwesome name="github" size={24} color="black" />
         </TouchableOpacity>
-        <TouchableOpacity style={s.socialBtn}>
+        <TouchableOpacity onPress={()=>onPressSocialMediaIcons("linkedin")} style={s.socialBtn}>
           <FontAwesome name="linkedin-square" size={24} color="black" />
         </TouchableOpacity>
       </View>

@@ -2,7 +2,7 @@ import { TouchableOpacity, Text, View, Image } from "react-native";
 import { s } from "./ProfileCard.style";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
-export function ProfileCard({ firstname, lastname, age, isOpenToWork }) {
+export function ProfileCard({ firstname, lastname, age, isOpenToWork, onPressTitle }) {
   //If, else statement
   // if (age > 20) {
   //   return <Text>You are old!</Text>;
@@ -20,6 +20,10 @@ export function ProfileCard({ firstname, lastname, age, isOpenToWork }) {
   //   </>
   // );
 
+  function onClickTitle_(){
+    return onPressTitle(firstname + " "+ lastname)    
+  }
+
   return (
     <View style={s.container}>
       <View style={s.header}>
@@ -30,9 +34,11 @@ export function ProfileCard({ firstname, lastname, age, isOpenToWork }) {
           />
         </View>
         <View style={s.texts}>
-          <Text style={s.name}>
-            {firstname} {lastname}
-          </Text>
+          <TouchableOpacity onPress={onClickTitle_}>
+            <Text style={s.name}>
+              {firstname} {lastname}
+            </Text>
+          </TouchableOpacity>
           <Text>
             Just testing react native after {age} years to see how it goes.
           </Text>
@@ -47,10 +53,16 @@ export function ProfileCard({ firstname, lastname, age, isOpenToWork }) {
             </Text>
           )}
           {/*OR*/}
-            <Text style={{backgroundColor: isOpenToWork ? "green" : "red", color: "white",}}>
-              {isOpenToWork ? "I am looking for a job" : "I am not looking for a job"}
-            </Text>
-          
+          <Text
+            style={{
+              backgroundColor: isOpenToWork ? "green" : "red",
+              color: "white",
+            }}
+          >
+            {isOpenToWork
+              ? "I am looking for a job"
+              : "I am not looking for a job"}
+          </Text>
         </View>
       </View>
       <View style={s.social}>

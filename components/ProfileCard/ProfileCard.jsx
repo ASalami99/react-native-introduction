@@ -24,6 +24,7 @@ export function ProfileCard({ firstname, lastname, age, isOpenToWork, onPressTit
     return onPressTitle(firstname + " "+ lastname)    
   }
 
+  
   return (
     <View style={s.container}>
       <View style={s.header}>

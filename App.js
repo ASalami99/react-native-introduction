@@ -1,4 +1,4 @@
-import { Alert, Linking, Text, View } from "react-native";
+import { Alert, Linking, Platform, Text, View } from "react-native";
 import { ProfileCard } from "./components/ProfileCard/ProfileCard";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { s } from "./App.style";
@@ -53,6 +53,8 @@ export default function App() {
         onPressSocialMediaIcons={goToSocialMedia}
         />
         <Text>You've clicked the title {countClick} times!</Text>
+        {Platform.OS === "android" && <Text>Hello on Andriod!</Text>}
+        {Platform.OS === "ios" && <Text>Hello on IOS!</Text>}
         <AgeCounter/>
       </SafeAreaView>
     </SafeAreaProvider>
